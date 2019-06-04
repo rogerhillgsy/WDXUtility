@@ -1,15 +1,23 @@
-let page = document.getElementById('buttonDiv');
-  const kButtonColors = ['#3aa757', '#e8453c', '#f9bb2d', '#4688f1'];
-  function constructOptions(kButtonColors) {
-    for (let item of kButtonColors) {
-      let button = document.createElement('button');
-      button.style.backgroundColor = item;
-      button.addEventListener('click', function() {
-        chrome.storage.sync.set({color: item}, function() {
-          console.log('color is ' + item);
-        })
-      });
-      page.appendChild(button);
-    }
-  }
-  constructOptions(kButtonColors);
+let page = document.getElementById('CRMUrlDiv');
+
+function constructTextField() {
+  let urlField = document.createElement('input');
+  urlField.setAttribute("type", "text");
+
+  let button  = document.createElement('button');
+  button.title = "Update CRM URL";
+
+  chrome.storage.sync.get("CRMUrl", function(data) {
+    urlField.value = data;
+    button.addEventListener('click', function() {
+      chrome.storage.sync.set({CRMUrl : urlField.value}, function() {
+        console.log("CRM URL is " + urlField.value);
+        statusbar.value = "Updated CRM Url"
+      })
+    });
+    });
+    page.appendChild(CRMUrl);
+    page.appendChild(button);
+}
+constructTextField();
+
