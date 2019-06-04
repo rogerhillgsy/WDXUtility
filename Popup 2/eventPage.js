@@ -10,13 +10,13 @@ chrome.contextMenus.onClicked.addListener( function (clickData, tabs) {
         console.log("Edit XDW Question");
     }
 
+    var crmUrl = "https://quilter365dev.wdx-dev.net/"; // main.aspx?etc=10132&id=%7b71a6ace7-6acd-e811-80db-d4ae52c70f51%7d&pagetype=entityrecord
     chrome.tabs.query({"active": true,  "currentWindow": true }, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {data: "Hello"}, function(response) {
+        chrome.tabs.sendMessage(tabs[0].id, {data: crmUrl }, function(response) {
             if ( !!response && response.success ) {
-            console.log('success ' + response.data);
+            console.log('success - opened link: ' + response.data);
             } else {
-                console.log('Failed')
-                debugger;
+                alert("Could not open related XDW Question " )               
             }
         });
     });
