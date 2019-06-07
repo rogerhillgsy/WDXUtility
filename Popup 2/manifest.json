@@ -1,13 +1,15 @@
 {
-    "name" : "Context Menu Demo",
-    "version" : "1.0",
-    "description" : "Edit XDW Question",
+    "name" : "WDX Utility",
+    "short_name" : "WDX Utils",
+    "version" : "1.0.0.0",
+    "description" : "Utilities for development of WDX configurations",
     "background" : {
+      "matches": ["https://*.wdx-dev.net/*","http://localhost/*"],
         "scripts" : ["eventPage.js"],
         "persistent" : false
     },
     "content_scripts" : [{
-      "matches": ["<all_urls>"],
+      "matches": ["https://*.wdx-dev.net/*","http://localhost/*"],
       "js" : ["contentScript.js"]
     }],
     "permissions" : ["storage","notifications","contextMenus","activeTab"],
