@@ -1,7 +1,7 @@
 {
     "name" : "WDX Utility",
     "short_name" : "WDX Utils",
-    "version" : "1.0.0.0",
+    "version" : "1.0.1.0",
     "description" : "Utilities for development of WDX configurations",
     "background" : {
       "matches": ["https://*.wdx-dev.net/*","http://localhost/*"],
