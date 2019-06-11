@@ -1,14 +1,13 @@
-let page = document.getElementById('CRMUrlDiv');
+let page = document.getElementById('CRMUrl');
+let button = document.getElementById('save');
 
 function constructTextField() {
   let urlField = document.createElement('input');
   urlField.setAttribute("type", "text");
-
-  let button  = document.createElement('button');
-  button.title = "Update CRM URL";
+  urlField.style.width="80%";
 
   chrome.storage.sync.get("CRMUrl", function(data) {
-    urlField.value = data;
+    urlField.value = data.CRMUrl;
     button.addEventListener('click', function() {
       chrome.storage.sync.set({CRMUrl : urlField.value}, function() {
         console.log("CRM URL is " + urlField.value);
@@ -16,8 +15,7 @@ function constructTextField() {
       })
     });
     });
-    page.appendChild(CRMUrl);
-    page.appendChild(button);
+    page.appendChild(urlField);
 }
 constructTextField();
 

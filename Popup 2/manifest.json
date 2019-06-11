@@ -1,33 +1,53 @@
 {
-    "name" : "WDX Utility",
-    "short_name" : "WDX Utils",
-    "version" : "1.0.1.0",
-    "description" : "Utilities for development of WDX configurations",
-    "background" : {
-      "matches": ["https://*.wdx-dev.net/*","http://localhost/*"],
-        "scripts" : ["eventPage.js"],
-        "persistent" : false
-    },
-    "content_scripts" : [{
-      "matches": ["https://*.wdx-dev.net/*","http://localhost/*"],
-      "js" : ["contentScript.js"]
-    }],
-    "permissions" : ["storage","notifications","contextMenus","activeTab"],
-    "page_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-          "16": "images/WDX_16.png",
-          "32": "images/WDX_32.png",
-          "48": "images/WDX_48.png",
-          "128": "images/WDX_128.png"
-        }
-      },
-      "icons": {
-        "16": "images/WDX_16.png",
-        "32": "images/WDX_32.png",
-        "48": "images/WDX_48.png",
-        "128": "images/WDX_128.png"
-    },
-    "options_page" : "options.html",  
-    "manifest_version" : 2
+  "name": "WDX Utility",
+  "short_name": "WDX Utils",
+  "version": "1.0.1.0",
+  "description": "Utilities for development of WDX configurations",
+  "background": {
+    "matches": [
+      "https://*.wdx-dev.net/*",
+      "http://localhost/*"
+    ],
+    "scripts": [
+      "eventPage.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.wdx-dev.net/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "notifications",
+    "contextMenus",
+    "activeTab"
+  ],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/WDX_16.png",
+      "32": "images/WDX_32.png",
+      "48": "images/WDX_48.png",
+      "128": "images/WDX_128.png"
+    }
+  },
+  "icons": {
+    "16": "images/WDX_16.png",
+    "32": "images/WDX_32.png",
+    "48": "images/WDX_48.png",
+    "128": "images/WDX_128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "manifest_version": 2
 }
