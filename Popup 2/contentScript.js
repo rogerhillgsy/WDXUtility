@@ -1,6 +1,5 @@
-chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener( function(data, sender, sendResponse) {
     var active = document.activeElement;
-    var crmUrl = request.data;
     // Search back up the dom hierarchy for a node with an id like "mee-form-field-control-<guid>"
     var current = document.activeElement.parentElement;
     var keyId = null;
@@ -11,7 +10,9 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
         current = current.parentElement;
     }
     if ( keyId != null ) {
-    var link = crmUrl +"main.aspx?etc=10132&id=%7b" + keyId + "%7d&pagetype=entityrecord";
+    // var link = data.CRMUrl +"main.aspx?etc=" + data.CRMQuestionOTC + "&id=%7b" + keyId + "%7d&pagetype=entityrecord";
+
+    var link = document.URL.replace( /#.*/,"#/redirect/" + keyId +"/wdx_xdwquestion")
     window.open(link, "_blank");
     sendResponse({data: link, success: true});
     } else {

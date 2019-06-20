@@ -1,7 +1,7 @@
 {
   "name": "WDX Utility",
   "short_name": "WDX Utils",
-  "version": "1.0.1.0",
+  "version": "1.0.2.0",
   "description": "Utilities for development of WDX configurations",
   "background": {
     "matches": [
@@ -45,9 +45,5 @@
     "48": "images/WDX_48.png",
     "128": "images/WDX_128.png"
   },
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
-  "manifest_version": 2
+    "manifest_version": 2
 }
